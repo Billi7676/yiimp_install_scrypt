@@ -273,60 +273,8 @@
     hide_output sudo ufw allow ssh
     hide_output sudo ufw allow http
     hide_output sudo ufw allow https
-    hide_output sudo ufw allow 3333/tcp
-    hide_output sudo ufw allow 3339/tcp
-    hide_output sudo ufw allow 3334/tcp
-    hide_output sudo ufw allow 3433/tcp
-    hide_output sudo ufw allow 3555/tcp
-    hide_output sudo ufw allow 3556/tcp
-    hide_output sudo ufw allow 3573/tcp
-    hide_output sudo ufw allow 3535/tcp
-    hide_output sudo ufw allow 3533/tcp
-    hide_output sudo ufw allow 3553/tcp
-    hide_output sudo ufw allow 3633/tcp
-    hide_output sudo ufw allow 3733/tcp
-    hide_output sudo ufw allow 3636/tcp
-    hide_output sudo ufw allow 3737/tcp
-    hide_output sudo ufw allow 3739/tcp
-    hide_output sudo ufw allow 3747/tcp
-    hide_output sudo ufw allow 3833/tcp
-    hide_output sudo ufw allow 3933/tcp
-    hide_output sudo ufw allow 4033/tcp
-    hide_output sudo ufw allow 4133/tcp
-    hide_output sudo ufw allow 4233/tcp
-    hide_output sudo ufw allow 4234/tcp
-    hide_output sudo ufw allow 4333/tcp
-    hide_output sudo ufw allow 4433/tcp
-    hide_output sudo ufw allow 4533/tcp
-    hide_output sudo ufw allow 4553/tcp
-    hide_output sudo ufw allow 4633/tcp
-    hide_output sudo ufw allow 4733/tcp
-    hide_output sudo ufw allow 4833/tcp
-    hide_output sudo ufw allow 4933/tcp
-    hide_output sudo ufw allow 5033/tcp
-    hide_output sudo ufw allow 5133/tcp
-    hide_output sudo ufw allow 5233/tcp
-    hide_output sudo ufw allow 5333/tcp
-    hide_output sudo ufw allow 5433/tcp
-    hide_output sudo ufw allow 5533/tcp
-    hide_output sudo ufw allow 5733/tcp
-    hide_output sudo ufw allow 5743/tcp
-    hide_output sudo ufw allow 3252/tcp
-    hide_output sudo ufw allow 5755/tcp
-    hide_output sudo ufw allow 5766/tcp
-    hide_output sudo ufw allow 5833/tcp
-    hide_output sudo ufw allow 5933/tcp
-    hide_output sudo ufw allow 6033/tcp
-    hide_output sudo ufw allow 5034/tcp
-    hide_output sudo ufw allow 6133/tcp
-    hide_output sudo ufw allow 6233/tcp
-    hide_output sudo ufw allow 6333/tcp
-    hide_output sudo ufw allow 6433/tcp
-    hide_output sudo ufw allow 7433/tcp
-    hide_output sudo ufw allow 8333/tcp
-    hide_output sudo ufw allow 8463/tcp
-    hide_output sudo ufw allow 8433/tcp
-    hide_output sudo ufw allow 8533/tcp
+    hide_output sudo ufw allow 45331/tcp
+    hide_output sudo ufw allow 45332/tcp
     hide_output sudo ufw --force enable
     sleep 5
     sudo systemctl status ufw | sed -n "1,3p"   
@@ -369,7 +317,7 @@
     
     # Compil Blocknotify
     cd ~
-    hide_output git clone https://github.com/tpruvot/yiimp
+    hide_output git clone https://github.com/Billi7676/yiimp
     cd $HOME/yiimp/blocknotify
     sudo sed -i 's/tu8tu5/'$blckntifypass'/' blocknotify.cpp
     hide_output sudo make
@@ -1022,7 +970,7 @@
     
     define('"'"'YAAMP_SITE_URL'"'"', '"'"''"${server_name}"''"'"');
     define('"'"'YAAMP_STRATUM_URL'"'"', YAAMP_SITE_URL); // change if your stratum server is on a different host
-    define('"'"'YAAMP_SITE_NAME'"'"', '"'"'YIIMP'"'"');
+    define('"'"'YAAMP_SITE_NAME'"'"', '"'"'AbsoluteCoin'"'"');
     define('"'"'YAAMP_ADMIN_EMAIL'"'"', '"'"''"${EMAIL}"''"'"');
     define('"'"'YAAMP_ADMIN_IP'"'"', '"'"''"${Public}"''"'"'); // samples: "80.236.118.26,90.234.221.11" or "10.0.0.1/8"
     
@@ -1030,7 +978,7 @@
     define('"'"'YAAMP_CREATE_NEW_COINS'"'"', false);
     define('"'"'YAAMP_NOTIFY_NEW_COINS'"'"', false);
     
-    define('"'"'YAAMP_DEFAULT_ALGO'"'"', '"'"'x11'"'"');
+    define('"'"'YAAMP_DEFAULT_ALGO'"'"', '"'"'lyra2v2'"'"');
     
     define('"'"'YAAMP_USE_NGINX'"'"', true);
     
@@ -1066,14 +1014,16 @@
     
     // Sample fixed pool fees
     $configFixedPoolFees = array(
-        '"'"'zr5'"'"' => 2.0,
-        '"'"'scrypt'"'"' => 20.0,
-        '"'"'sha256'"'"' => 5.0,
+    //    '"'"'zr5'"'"' => 2.0,
+    //    '"'"'scrypt'"'"' => 20.0,
+    //    '"'"'sha256'"'"' => 5.0,
      );
     
     // Sample custom stratum ports
     $configCustomPorts = array(
     //	'"'"'x11'"'"' => 7000,
+    	'"'"'lyra2v2'"'"' => 45331,
+    	'"'"'lyra2v2'"'"' => 45332,
     );
     
     // mBTC Coefs per algo (default is 1.0)
